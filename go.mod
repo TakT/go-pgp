@@ -1,4 +1,4 @@
-module github.com/jchavannes/go-pgp
+module github.com/TakT/go-pgp
 
 go 1.16
 
