@@ -3,7 +3,7 @@ package pgp_test
 import (
 	"errors"
 	"fmt"
-	"github.com/kbereza/go-pgp/pgp"
+	"github.com/jchavannes/go-pgp/pgp"
 	"testing"
 )
 

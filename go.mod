@@ -1,4 +1,4 @@
-module github.com/kbereza/go-pgp
+module github.com/jchavannes/go-pgp
 
 go 1.16
 
