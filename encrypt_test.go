@@ -1,33 +1,33 @@
-package pgp_test
+package go_pgp_test
 
 import (
 	"errors"
 	"fmt"
-	"github.com/jchavannes/go-pgp/pgp"
+	"github.com/kbereza/go-pgp"
 	"testing"
 )
 
 func TestEncrypt(t *testing.T) {
 	fmt.Println("Entcrypt test: START")
-	pubEntity, err := pgp.GetEntity([]byte(TestPublicKey), []byte{})
+	pubEntity, err := go_pgp.GetEntity([]byte(TestPublicKey), []byte{})
 	if err != nil {
 		t.Error(fmt.Errorf("Error getting entity: %v", err))
 	}
 	fmt.Println("Created public key entity.")
 
-	encrypted, err := pgp.Encrypt(pubEntity, []byte(TestMessage))
+	encrypted, err := go_pgp.Encrypt(pubEntity, []byte(TestMessage))
 	if err != nil {
 		t.Error(err)
 	}
 	fmt.Println("Encrypted test message with public key entity.")
 
-	privEntity, err := pgp.GetEntity([]byte(TestPublicKey), []byte(TestPrivateKey))
+	privEntity, err := go_pgp.GetEntity([]byte(TestPublicKey), []byte(TestPrivateKey))
 	if err != nil {
 		t.Error(fmt.Errorf("Error getting entity: %v", err))
 	}
 	fmt.Println("Created private key entity.")
 
-	decrypted, err := pgp.Decrypt(privEntity, encrypted)
+	decrypted, err := go_pgp.Decrypt(privEntity, encrypted)
 	if err != nil {
 		t.Error(err)
 	}

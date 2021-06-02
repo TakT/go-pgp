@@ -1,4 +1,4 @@
-package pgp
+package go_pgp
 
 import (
 	"crypto"
